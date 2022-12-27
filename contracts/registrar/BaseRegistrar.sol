@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.7.0;
 
-import "./standards/ERC721.sol";
-import "./libraries/Ownable.sol";
-import "./ENS.sol";
+import "../standards/ERC721.sol";
+import "../libraries/Ownable.sol";
+import "../interfaces/ENS.sol";
 
 abstract contract BaseRegistrar is ERC721, Ownable {
     uint constant public GRACE_PERIOD = 90 days;

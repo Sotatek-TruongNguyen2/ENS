@@ -1,5 +1,4 @@
 // File: openzeppelin-solidity/contracts/math/SafeMath.sol
-
 pragma solidity ^0.7.0;
 
 /**

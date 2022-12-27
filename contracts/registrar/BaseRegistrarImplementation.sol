@@ -2,7 +2,7 @@
 pragma solidity ^0.7.0;
 
 import "./BaseRegistrar.sol";
-import "./standards/ERC721.sol";
+import "../standards/ERC721.sol";
 
 contract BaseRegistrarImplementation is BaseRegistrar {
     // A map of expiry times

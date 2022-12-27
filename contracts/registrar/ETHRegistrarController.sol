@@ -1,9 +1,10 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.7.0;
 
-import "./ENS.sol";
-import "./interfaces/IERC721.sol";
-import "./libraries/Ownable.sol";
+import "../interfaces/ENS.sol";
+import "../interfaces/IERC721.sol";
+import "../libraries/Ownable.sol";
+import "../libraries/StringUtils.sol";
 import "./BaseRegistrar.sol";
 interface PriceOracle {
     /**
@@ -16,42 +17,6 @@ interface PriceOracle {
     function price(string calldata name, uint expires, uint duration) external view returns(uint);
 }
 
-// File: @ensdomains/ethregistrar/contracts/StringUtils.sol
-
-pragma solidity ^0.7.0;
-
-library StringUtils {
-    /**
-     * @dev Returns the length of a given string
-     *
-     * @param s The string to measure the length of
-     * @return The length of the input string
-     */
-    function strlen(string memory s) internal pure returns (uint) {
-        uint len;
-        uint i = 0;
-        uint bytelength = bytes(s).length;
-        for(len = 0; i < bytelength; len++) {
-            byte b = bytes(s)[i];
-            if(b < 0x80) {
-                i += 1;
-            } else if (b < 0xE0) {
-                i += 2;
-            } else if (b < 0xF0) {
-                i += 3;
-            } else if (b < 0xF8) {
-                i += 4;
-            } else if (b < 0xFC) {
-                i += 5;
-            } else {
-                i += 6;
-            }
-        }
-        return len;
-    }
-}
-
-// File: @ensdomains/resolver/contracts/Resolver.sol
 
 pragma solidity ^0.7.0;
 
