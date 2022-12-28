@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.7.0;
 
-import "./ResolverBase.sol";
-import "../interfaces/IAddrResolver.sol";
-import "../interfaces/IAddressResolver.sol";
+import "../ResolverBase.sol";
+import "../../interfaces/IAddrResolver.sol";
+import "../../interfaces/IAddressResolver.sol";
 
 abstract contract AddrResolver is
     IAddrResolver,
